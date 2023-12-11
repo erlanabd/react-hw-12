@@ -30,6 +30,8 @@ const TodoItem = (props) => {
       <Button onClick={handleDelete}>
         <i className={styles["btn-icon"]}></i>
       </Button>
+
+      
     </div>
   );
 };

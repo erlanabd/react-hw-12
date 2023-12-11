@@ -5,7 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #FAFAFA;
+  background: url('./assets/images/bg-desktop-light.jpg') top center / cover no-repeat,  hsl(0, 0%, 98%) center bottom;
+  background-size: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {

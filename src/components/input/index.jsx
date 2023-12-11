@@ -13,7 +13,6 @@ const Input = ({ value, onChange, onClick, onSubmit }) => {
           onChange={(e) => onChange(e.target.value)}
           type="text"
         />
-        <Button type="submit">+</Button>
       </form>
     </div>
   );

@@ -9,7 +9,7 @@ import { getActiveFilter } from "../../redux/filter/selectors";
 import { filterTodo } from "../../redux/filter/actions";
 import { TYPE_OF_FILTER } from "../../redux/filter/reducer";
 import styles from "./styles.module.scss";
-import bgImage from "../../assets/images/bg-desktop-light.jpg";
+import FilterBtns from "../filter";
 
 function App() {
   const todos = useSelector(getTodos);
@@ -41,9 +41,7 @@ function App() {
     }
   };
 
-  const handleFilterTodo = (filter) => {
-    dispatch(filterTodo(filter));
-  };
+  
 
   const handleToggleTodo = (id) => {
     dispatch(toggleTodo(id));
@@ -79,6 +77,7 @@ function App() {
 
   return (
     <div className={styles["container"]}>
+      <h1>TODO</h1>
       <div className={styles["todo-list-wrap"]}>
         <div>
           <Input
@@ -90,21 +89,14 @@ function App() {
 
         <div className={styles["todo-list"]}>
           {filterTodos(todos, activeFilter).map(renderTodoItem)}
+          {todos.length ? (
+            <FilterBtns />
+          ) : (
+           ''
+          )}
         </div>
 
-        <div className={"filter-button"}>
-          <Button onClick={() => handleFilterTodo(TYPE_OF_FILTER.SHOW_ALL)}>
-            show all
-          </Button>
-          <Button onClick={() => handleFilterTodo(TYPE_OF_FILTER.SHOW_ACTIVE)}>
-            show active
-          </Button>
-          <Button
-            onClick={() => handleFilterTodo(TYPE_OF_FILTER.SHOW_COMPLETED)}
-          >
-            show completed
-          </Button>
-        </div>
+        <div className={"filter-button"}></div>
       </div>
     </div>
   );
