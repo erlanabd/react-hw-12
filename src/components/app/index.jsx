@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../button/index";
 import Input from "../input/index";
 import TodoItem from "../todo-item/index";
 import { addTodo, deleteTodo, toggleTodo } from "../../redux/todo/actions";
 import { getTodos } from "../../redux/todo/selectors";
 import { getActiveFilter } from "../../redux/filter/selectors";
-import { filterTodo } from "../../redux/filter/actions";
 import { TYPE_OF_FILTER } from "../../redux/filter/reducer";
 import styles from "./styles.module.scss";
 import FilterBtns from "../filter";
@@ -22,15 +20,17 @@ function App() {
     setInputValue(value);
   };
 
-  const strategyToGetTodosByFilter = {
-    [TYPE_OF_FILTER.SHOW_ALL]: todos,
-    [TYPE_OF_FILTER.SHOW_ACTIVE]: todos.filter((todo) => !todo.isCompleted),
-    [TYPE_OF_FILTER.SHOW_COMPLETED]: todos.filter((todo) => todo.isCompled),
-  };
+// Это другой способ 
 
-  const filteredTodos = activeFilter
-    ? strategyToGetTodosByFilter[activeFilter]
-    : todos;
+  // const strategyToGetTodosByFilter = {
+  //   [TYPE_OF_FILTER.SHOW_ALL]: todos,
+  //   [TYPE_OF_FILTER.SHOW_ACTIVE]: todos.filter((todo) => !todo.isCompleted),
+  //   [TYPE_OF_FILTER.SHOW_COMPLETED]: todos.filter((todo) => todo.isCompled),
+  // };
+
+  // const filteredTodos = activeFilter
+  //   ? strategyToGetTodosByFilter[activeFilter]
+  //   : todos;
 
   const handleClickAddButton = (e) => {
     e.preventDefault();

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../button";
 import styles from "./styles.module.scss";
 
 const Input = ({ value, onChange, onClick, onSubmit }) => {
