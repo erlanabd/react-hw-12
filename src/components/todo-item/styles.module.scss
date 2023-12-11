@@ -1,0 +1,36 @@
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9E9EC;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    .todo-list-item__body {
+        display: flex;
+        .checkmark-icon {
+            display: block;
+            background: url('../../assets/icons/icon-check.svg') center center / contain no-repeat;
+            width: 15px;
+            height: 15px;
+            color: black;
+        }
+        .checkbox-wrap {
+            width: 20px;
+            height: 20px;
+            border:1px solid grey;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+    }
+    .btn-icon {
+        background: url(../../assets/icons/icon-cross.svg) center center/ contain no-repeat;
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+ 
+}
+
